@@ -1,13 +1,9 @@
 const fs = require('fs');
 
-const filePath = './example.txt';
-
-(async function () {
-    try {
-        const data = await fs.promises.readFile(filePath, 'utf8');
-        console.log("Zawartość pliku:");
-        console.log(data);
-    } catch (err) {
-        console.error(`Błąd podczas odczytu pliku: ${err.message}`);
-    }
-})();
+fs.promises.readFile('example.txt', 'utf8')
+    .then(data => {
+        console.log('Zawartość pliku:\n', data);
+    })
+    .catch(err => {
+        console.error('Błąd :', err);
+    });
