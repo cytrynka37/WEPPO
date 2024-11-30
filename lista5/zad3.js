@@ -10,12 +10,13 @@ process.stdin.on('data', (data) => {
         console.log("Proszę podać liczbę.");
     } else if (userGuess === randomNumber) {
         console.log("To jest właśnie ta liczba! Gratulacje!");
-        process.exit(1);
+        process.stdin.pause();
+        return;
     } else if (userGuess < randomNumber) {
         console.log("Moja liczba jest większa.");
     } else {
         console.log("Moja liczba jest mniejsza.");
     }
-    
+     
     process.stdout.write("Spróbuj jeszcze raz: ");
 });

@@ -1,4 +1,4 @@
-var http = require('https');
+const http = require('https');
 
 function promiseGet(url) {
     return new Promise(function (resolve, reject) {

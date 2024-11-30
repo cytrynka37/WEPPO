@@ -4,8 +4,7 @@ const readline = require('readline');
 const ipRequests = {};
 
 const rl = readline.createInterface({
-    input: fs.createReadStream('server.log'),
-
+    input: fs.createReadStream('server.log')
 });
 
 rl.on('line', (line) => {
